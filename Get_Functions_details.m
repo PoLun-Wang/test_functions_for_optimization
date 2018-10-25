@@ -17,170 +17,185 @@
 %                                                                         %
 %_________________________________________________________________________%
 
-% This function containts full information and implementations of the benchmark 
+% This function containts full information and implementations of the benchmark
 % functions in Table 1, Table 2, and Table 3 in the paper
 
 % lb is the lower bound: lb=[lb_1,lb_2,...,lb_d]
 % up is the uppper bound: ub=[ub_1,ub_2,...,ub_d]
 % dim is the number of variables (dimension of the problem)
 
-function [lb,ub,dim,fobj] = Get_Functions_details(F)
+function [lb,ub,dim,fobj, bestSol] = Get_Functions_details(F)
 
 
 switch F
-    case 'F1'
-        fobj = @F1;
-        lb=-100;
-        ub=100;
-        dim=100;
-        
-    case 'F2'
-        fobj = @F2;
-        lb=-10;
-        ub=10;
-        dim=100;
-        
-    case 'F3'
-        fobj = @F3;
-        lb=-100;
-        ub=100;
-        dim=100;
-        
-    case 'F4'
-        fobj = @F4;
-        lb=-100;
-        ub=100;
-        dim=100;
-        
-    case 'F5'
-        fobj = @F5;
-        lb=-30;
-        ub=30;
-        dim=100;
-        
-    case 'F6'
-        fobj = @F6;
-        lb=-100;
-        ub=100;
-        dim=100;
-        
-    case 'F7'
-        fobj = @F7;
-        lb=-1.28;
-        ub=1.28;
-        dim=100;
-        
-    case 'F8'
-        fobj = @F8;
-        lb=-500;
-        ub=500;
-        dim=100;
-        
-    case 'F9'
-        fobj = @F9;
-        lb=-5.12;
-        ub=5.12;
-        dim=100;
-        
-    case 'F10'
-        fobj = @F10;
-        lb=-32;
-        ub=32;
-        dim=100;
-        
-    case 'F11'
-        fobj = @F11;
-        lb=-600;
-        ub=600;
-        dim=100;
-        
-    case 'F12'
-        fobj = @F12;
-        lb=-50;
-        ub=50;
-        dim=100;
-        
-    case 'F13'
-        fobj = @F13;
-        lb=-50;
-        ub=50;
-        dim=100;
-        
-    case 'F14'
-        fobj = @F14;
-        lb=-65.536;
-        ub=65.536;
-        dim=2;
-        
-    case 'F15'
-        fobj = @F15;
-        lb=-5;
-        ub=5;
-        dim=100;
-        
-    case 'F16'
-        fobj = @F16;
-        lb=-5;
-        ub=5;
-        dim=100;
-        
-    case 'F17'
-        fobj = @F17;
-        lb=[-5,0];
-        ub=[10,15];
-        dim=2;
-        
-    case 'F18'
-        fobj = @F18;
-        lb=-2;
-        ub=2;
-        dim=100;
-        
-    case 'F19'
-        fobj = @F19;
-        lb=0;
-        ub=1;
-        dim=3;
-        
-    case 'F20'
-        fobj = @F20;
-        lb=0;
-        ub=1;
-        dim=6;     
-        
-    case 'F21'
-        fobj = @F21;
-        lb=0;
-        ub=10;
-        dim=4;    
-        
-    case 'F22'
-        fobj = @F22;
-        lb=0;
-        ub=10;
-        dim=4;    
-        
-    case 'F23'
-        fobj = @F23;
-        lb=0;
-        ub=10;
-        dim=4;
-    % Andy
-    case 'F24'
-        fobj = @F24;
-        lb=-512;
-        ub=512;
-        dim=2;
-    case 'F25'
-        fobj = @F25;
-        lb=-5;
-        ub=5;
-        dim=2;
-    case 'F26'
-        fobj = @F26;
-        lb=-10;
-        ub=10;
-        dim=2;
+        case 'F1'
+                fobj = @F1;
+                lb=-100;
+                ub=100;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F2'
+                fobj = @F2;
+                lb=-10;
+                ub=10;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F3'
+                fobj = @F3;
+                lb=-100;
+                ub=100;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F4'
+                fobj = @F4;
+                lb=-100;
+                ub=100;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F5'
+                fobj = @F5;
+                lb=-30;
+                ub=30;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F6'
+                fobj = @F6;
+                lb=-100;
+                ub=100;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F7'
+                fobj = @F7;
+                lb=-1.28;
+                ub=1.28;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F8'
+                fobj = @F8;
+                lb=-500;
+                ub=500;
+                dim=100;
+                bestSol = -41998.29;
+                
+        case 'F9'
+                fobj = @F9;
+                lb=-5.12;
+                ub=5.12;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F10'
+                fobj = @F10;
+                lb=-32;
+                ub=32;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F11'
+                fobj = @F11;
+                lb=-600;
+                ub=600;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F12'
+                fobj = @F12;
+                lb=-50;
+                ub=50;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F13'
+                fobj = @F13;
+                lb=-50;
+                ub=50;
+                dim=100;
+                bestSol = 0;
+                
+        case 'F14'
+                fobj = @F14;
+                lb=-65.536;
+                ub=65.536;
+                dim=2;
+                bestSol = 1;
+                
+        case 'F15'
+                fobj = @F15;
+                lb=-5;
+                ub=5;
+                dim=4;
+                bestSol = 0.0003;
+                
+        case 'F16'
+                fobj = @F16;
+                lb=-5;
+                ub=5;
+                dim=2;
+                bestSol = -1.0316;
+                
+        case 'F17'
+                fobj = @F17;
+                lb=[-5,0];
+                ub=[10,15];
+                dim=2;
+                bestSol = 0.398;
+                
+        case 'F18'
+                fobj = @F18;
+                lb=-2;
+                ub=2;
+                dim=2;
+                bestSol = 3;
+                
+        case 'F19'
+                fobj = @F19;
+                lb=0;
+                ub=1;
+                dim=3;
+                bestSol = -3.86;
+                
+        case 'F20'
+                fobj = @F20;
+                lb=0;
+                ub=1;
+                dim=6;
+                bestSol = -3.32;
+                
+        case 'F21'
+                fobj = @F21;
+                lb=0;
+                ub=10;
+                dim=4;
+                bestSol = -10.1532;
+                
+        case 'F22'
+                fobj = @F22;
+                lb=0;
+                ub=10;
+                dim=4;
+                bestSol = -10.4028;
+                
+        case 'F23'
+                fobj = @F23;
+                lb=0;
+                ub=10;
+                dim=4;
+                bestSol = -10.5363;
+                
+        case 'F24'
+                fobj = @F24;
+                lb = 0;
+                ub = 4;
+                dim = 4;
+                bestSol = 0;
+                
 end
 
 end
@@ -188,7 +203,7 @@ end
 % F1
 
 function o = F1(x)
-o=sum((x-55).^2);
+o=sum(x.^2);
 end
 
 % F2
@@ -203,7 +218,7 @@ function o = F3(x)
 dim=size(x,2);
 o=0;
 for i=1:dim
-    o=o+sum(x(1:i))^2;
+        o=o+sum(x(1:i))^2;
 end
 end
 
@@ -265,7 +280,7 @@ end
 function o = F12(x)
 dim=size(x,2);
 o=(pi/dim)*(10*((sin(pi*(1+(x(1)+1)/4)))^2)+sum((((x(1:dim-1)+1)./4).^2).*...
-(1+10.*((sin(pi.*(1+(x(2:dim)+1)./4)))).^2))+((x(dim)+1)/4)^2)+sum(Ufun(x,10,100,4));
+        (1+10.*((sin(pi.*(1+(x(2:dim)+1)./4)))).^2))+((x(dim)+1)/4)^2)+sum(Ufun(x,10,100,4));
 end
 
 % F13
@@ -273,17 +288,17 @@ end
 function o = F13(x)
 dim=size(x,2);
 o=.1*((sin(3*pi*x(1)))^2+sum((x(1:dim-1)-1).^2.*(1+(sin(3.*pi.*x(2:dim))).^2))+...
-((x(dim)-1)^2)*(1+(sin(2*pi*x(dim)))^2))+sum(Ufun(x,5,100,4));
+        ((x(dim)-1)^2)*(1+(sin(2*pi*x(dim)))^2))+sum(Ufun(x,5,100,4));
 end
 
 % F14
 
 function o = F14(x)
 aS=[-32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32;,...
--32 -32 -32 -32 -32 -16 -16 -16 -16 -16 0 0 0 0 0 16 16 16 16 16 32 32 32 32 32];
+        -32 -32 -32 -32 -32 -16 -16 -16 -16 -16 0 0 0 0 0 16 16 16 16 16 32 32 32 32 32];
 
 for j=1:25
-    bS(j)=sum((x'-aS(:,j)).^6);
+        bS(j)=sum((x'-aS(:,j)).^6);
 end
 o=(1/500+sum(1./([1:25]+bS))).^(-1);
 end
@@ -312,7 +327,7 @@ end
 
 function o = F18(x)
 o=(1+(x(1)+x(2)+1)^2*(19-14*x(1)+3*(x(1)^2)-14*x(2)+6*x(1)*x(2)+3*x(2)^2))*...
-    (30+(2*x(1)-3*x(2))^2*(18-32*x(1)+12*(x(1)^2)+48*x(2)-36*x(1)*x(2)+27*(x(2)^2)));
+        (30+(2*x(1)-3*x(2))^2*(18-32*x(1)+12*(x(1)^2)+48*x(2)-36*x(1)*x(2)+27*(x(2)^2)));
 end
 
 % F19
@@ -322,7 +337,7 @@ aH=[3 10 30;.1 10 35;3 10 30;.1 10 35];cH=[1 1.2 3 3.2];
 pH=[.3689 .117 .2673;.4699 .4387 .747;.1091 .8732 .5547;.03815 .5743 .8828];
 o=0;
 for i=1:4
-    o=o-cH(i)*exp(-(sum(aH(i,:).*((x-pH(i,:)).^2))));
+        o=o-cH(i)*exp(-(sum(aH(i,:).*((x-pH(i,:)).^2))));
 end
 end
 
@@ -332,10 +347,10 @@ function o = F20(x)
 aH=[10 3 17 3.5 1.7 8;.05 10 17 .1 8 14;3 3.5 1.7 10 17 8;17 8 .05 10 .1 14];
 cH=[1 1.2 3 3.2];
 pH=[.1312 .1696 .5569 .0124 .8283 .5886;.2329 .4135 .8307 .3736 .1004 .9991;...
-.2348 .1415 .3522 .2883 .3047 .6650;.4047 .8828 .8732 .5743 .1091 .0381];
+        .2348 .1415 .3522 .2883 .3047 .6650;.4047 .8828 .8732 .5743 .1091 .0381];
 o=0;
 for i=1:4
-    o=o-cH(i)*exp(-(sum(aH(i,:).*((x-pH(i,:)).^2))));
+        o=o-cH(i)*exp(-(sum(aH(i,:).*((x-pH(i,:)).^2))));
 end
 end
 
@@ -347,7 +362,7 @@ cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
 
 o=0;
 for i=1:5
-    o=o-((x-aSH(i,:))*(x-aSH(i,:))'+cSH(i))^(-1);
+        o=o-((x-aSH(i,:))*(x-aSH(i,:))'+cSH(i))^(-1);
 end
 end
 
@@ -359,7 +374,7 @@ cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
 
 o=0;
 for i=1:7
-    o=o-((x-aSH(i,:))*(x-aSH(i,:))'+cSH(i))^(-1);
+        o=o-((x-aSH(i,:))*(x-aSH(i,:))'+cSH(i))^(-1);
 end
 end
 
@@ -371,23 +386,19 @@ cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
 
 o=0;
 for i=1:10
-    o=o-((x-aSH(i,:))*(x-aSH(i,:))'+cSH(i))^(-1);
+        o=o-((x-aSH(i,:))*(x-aSH(i,:))'+cSH(i))^(-1);
 end
+end
+
+function o = F24(x)
+n = 4;
+b = [8, 18, 44, 114];
+x = repmat(x, n, 1);
+inner = sum(x .^ repmat((1:n)', 1, n), 2)';
+o = sum((inner-b).^2);
 end
 
 function o=Ufun(x,a,k,m)
 o=k.*((x-a).^m).*(x>a)+k.*((-x-a).^m).*(x<(-a));
 end
 
-% Andy
-function o = F24(x)
-    o=-(x(:,2)+47)*sin(sqrt(abs(x(:,1)./2+(x(:,2)+47))))-x(:,1)*sin(sqrt(abs(x(:,1)-(x(:,2)+47))));
-end
-
-function o = F25(x)
-    o=(x(:,1)^2 + x(:,2) - 11)^2 + (x(:,1)+x(:,2)^2-7)^2;
-end
-
-function o = F26(x)
-    o=-0.0001*(abs(sin(x(:,1))*sin(x(:,2))*exp(abs(100-sqrt(x(:,1)^2+x(:,2)^2)/pi)))+1)^0.1;
-end
