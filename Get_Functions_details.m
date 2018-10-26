@@ -17,6 +17,7 @@
 %                                                                         %
 %_________________________________________________________________________%
 
+% This function containts full information and implementations of the benchmark
 % functions in Table 1, Table 2, and Table 3 in the paper
 
 % lb is the lower bound: lb=[lb_1,lb_2,...,lb_d]
@@ -195,7 +196,6 @@ switch F
                 dim = 4;
                 bestSol = 0;
                 
-
 end
 
 end
@@ -218,7 +218,7 @@ function o = F3(x)
 dim=size(x,2);
 o=0;
 for i=1:dim
-    o=o+sum(x(1:i))^2;
+        o=o+sum(x(1:i))^2;
 end
 end
 
@@ -288,16 +288,13 @@ end
 function o = F13(x)
 dim=size(x,2);
 o=.1*((sin(3*pi*x(1)))^2+sum((x(1:dim-1)-1).^2.*(1+(sin(3.*pi.*x(2:dim))).^2))+...
-
         ((x(dim)-1)^2)*(1+(sin(2*pi*x(dim)))^2))+sum(Ufun(x,5,100,4));
-
 end
 
 % F14
 
 function o = F14(x)
 aS=[-32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32;,...
-
         -32 -32 -32 -32 -32 -16 -16 -16 -16 -16 0 0 0 0 0 16 16 16 16 16 32 32 32 32 32];
 
 for j=1:25
@@ -404,4 +401,3 @@ end
 function o=Ufun(x,a,k,m)
 o=k.*((x-a).^m).*(x>a)+k.*((-x-a).^m).*(x<(-a));
 end
-
