@@ -192,8 +192,29 @@ switch F
         case 'F24'
                 fobj = @F24;
                 lb = 0;
-                ub = 4;
+                ub = 10;
                 dim = 4;
+                bestSol = 0;
+                
+        case 'F25'
+                fobj = @F25;
+                lb = -100;
+                ub = 100;
+                dim = 100;
+                bestSol = 0;
+                
+        case 'F26'
+                fobj = @F26;
+                lb = -100;
+                ub = 100;
+                dim = 100;
+                bestSol = 0;
+                
+        case 'F27'
+                fobj = @F27;
+                lb = -100;
+                ub = 100;
+                dim = 100;
                 bestSol = 0;
                 
 end
@@ -390,6 +411,8 @@ for i=1:10
 end
 end
 
+% F24
+
 function o = F24(x)
 n = 4;
 b = [8, 18, 44, 114];
@@ -398,6 +421,31 @@ inner = sum(x .^ repmat((1:n)', 1, n), 2)';
 o = sum((inner-b).^2);
 end
 
+% F25
+
+function o = F25(x)
+d = length(x);
+sum1 = sum(x.^2);
+sum2 = sum(0.5.*(1:d).*x);
+o = sum1+sum2^2+sum2^4;
+end
+
+% F26
+
+function o = F26(x)
+term1 = sum(x.^2);
+term2 = prod(x);
+o = 0.26 .* term1 - 0.48 .* term2;
+end
+
+function o = F27(x)
+b = 0.5;
+d = length(x);
+inner = sum(((1:d).^((1:d)') + b) .* ((x./(1:d)).^((1:d)')-1), 2)';
+o = sum(inner .^2);
+end
+
 function o=Ufun(x,a,k,m)
 o=k.*((x-a).^m).*(x>a)+k.*((-x-a).^m).*(x<(-a));
 end
+
