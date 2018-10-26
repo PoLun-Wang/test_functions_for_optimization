@@ -3,7 +3,9 @@ This is a program that can calculate result of  optimization functions. And this
 
 This is the website of author who published WOA: http://www.alimirjalili.com/WOA.html
 
-    - We only modified 2 programs from original version:
-        - Get_Functions_details.m
-        - func_plot.m
-    - The main purpose of these modification is extend test functions.
+# Purpose
+We only modified 2 programs from original version:
+- Get_Functions_details.m
+- func_plot.m
+
+The main purpose of these modification is extend test functions.
