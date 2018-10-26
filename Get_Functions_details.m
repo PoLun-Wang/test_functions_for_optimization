@@ -24,7 +24,7 @@
 % up is the uppper bound: ub=[ub_1,ub_2,...,ub_d]
 % dim is the number of variables (dimension of the problem)
 
-function [lb,ub,dim,fobj, bestSol] = Get_Functions_details(F)
+function [lb,ub,dim,fobj,bestSol] = Get_Functions_details(F)
 
 
 switch F
@@ -217,6 +217,26 @@ switch F
                 dim = 100;
                 bestSol = 0;
                 
+        case 'F34'
+                fobj = @F34;
+                lb = -100;
+                ub = 100;
+                dim = 100;
+                bestSol = 0;
+                
+        case 'F35'
+                fobj = @F35;
+                lb = -5;
+                ub = 5;
+                dim = 100;
+                bestSol = -39.16599*dim;
+                
+        case 'F36'
+                fobj = @F36;
+                lb = -5;
+                ub = 5;
+                dim = 100;
+                bestSol = 0;
 end
 
 end
@@ -249,7 +269,7 @@ function o = F4(x)
 o=max(abs(x));
 end
 
-% F5
+% F5: Rosenbrock Function
 
 function o = F5(x)
 dim=size(x,2);
@@ -443,6 +463,44 @@ b = 0.5;
 d = length(x);
 inner = sum(((1:d).^((1:d)') + b) .* ((x./(1:d)).^((1:d)')-1), 2)';
 o = sum(inner .^2);
+end
+
+% F34: Salomon Function
+% ref: http://benchmarkfcns.xyz/benchmarkfcns/salomonfcn.html
+function o = F34(x)
+    x2 = x .^ 2;
+    sumx2 = sum(x2, 2);
+    sqrtsx2 = sqrt(sumx2);
+    
+    scores = 1 - cos(2 .* pi .* sqrtsx2) + (0.1 * sqrtsx2);
+    
+    o = scores;
+end
+
+% F35: Styblinski-Tank Function
+% ref: http://benchmarkfcns.xyz/benchmarkfcns/styblinskitankfcn.html
+function o = F35(x)
+    n = size(x, 2);
+    scores = 0;
+    for i = 1:n
+        scores = scores + ((x(:, i) .^4) - (16 * x(:, i) .^ 2) + (5 * x(:, i)));
+    end
+    scores = 0.5 * scores;
+    
+    o = scores;
+end
+
+% Xin-She Yang Function
+% ref: http://benchmarkfcns.xyz/benchmarkfcns/xinsheyangn1fcn.html
+function o = F36(x)
+    n = size(x, 2);
+
+    scores = 0;
+    for i = 1:n
+        scores = scores + rand * (abs(x(:, i)) .^ i);
+    end
+    
+    o = scores;
 end
 
 function o=Ufun(x,a,k,m)
