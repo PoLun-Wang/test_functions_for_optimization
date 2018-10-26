@@ -237,6 +237,20 @@ switch F
                 ub = 5;
                 dim = 100;
                 bestSol = 0;
+        
+        case 'F37'
+                fobj = @F37;
+                lb = -10;
+                ub = 10;
+                dim = 100;
+                bestSol = -186.7309;
+                
+        case 'F38'
+                fobj = @F38;
+                lb = -10;
+                ub = 10;
+                dim = 100;
+                bestSol = 0;
 end
 
 end
@@ -490,7 +504,7 @@ function o = F35(x)
     o = scores;
 end
 
-% Xin-She Yang Function
+% F36: Xin-She Yang Function
 % ref: http://benchmarkfcns.xyz/benchmarkfcns/xinsheyangn1fcn.html
 function o = F36(x)
     n = size(x, 2);
@@ -501,6 +515,45 @@ function o = F36(x)
     end
     
     o = scores;
+end
+
+% F37: Shubert Function
+% ref: http://benchmarkfcns.xyz/benchmarkfcns/shubertfcn.html
+function o = F37(x)
+    n = size(x, 2);
+    
+    scores = 1;
+    for i = 1:n
+        inner_sum = 0;
+        for j = 1:5
+            inner_sum = inner_sum + j * cos(((j + 1) * x(:, i)) + j);
+        end
+        scores = inner_sum .* scores;
+    end
+    
+    o = scores;
+end
+
+% F38: Levy Function
+% ref: https://www.sfu.ca/~ssurjano/levy.html
+function o = F38(x)
+    d = size(x, 2);
+
+    for ii = 1:d
+        w(ii) = 1 + (x(ii) - 1)/4;
+    end
+
+    term1 = (sin(pi*w(1)))^2;
+    term3 = (w(d)-1)^2 * (1+(sin(2*pi*w(d)))^2);
+
+    sum = 0;
+    for ii = 1:(d-1)
+        wi = w(ii);
+            new = (wi-1)^2 * (1+10*(sin(pi*wi+1))^2);
+        sum = sum + new;
+    end
+
+    o = term1 + sum + term3;
 end
 
 function o=Ufun(x,a,k,m)
