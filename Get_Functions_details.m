@@ -236,6 +236,13 @@ switch F
             ub = 500;
             dim = 100;
             bestSol = 0;
+            
+        case 'F31'
+            fobj = @F31;
+            lb = -10.24;
+            ub = 10.24;
+            dim = 100;
+            bestSol = 0;
                   
         case 'F34'
                 fobj = @F34;
@@ -533,6 +540,19 @@ function o = F30(x)
         scores = scores + (x2(:, i) - i) .^ 2;
     end
     o = scores;
+end
+
+% F31: Whitely 
+function o = F31(x)
+    fitness = 0;
+    n = size(x, 2);
+    for i = 1:n
+        for j = 1:n
+            temp = 100*((x(i).^2) - x(j)) + (1 - x(j)).^2;
+            fitness = fitness + (temp.^2)/4000 - cos(temp) + 1;
+        end
+    end
+    o = fitness;
 end
 
 % F34: Salomon Function
