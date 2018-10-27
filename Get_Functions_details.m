@@ -82,7 +82,7 @@ switch F
                 lb=-500;
                 ub=500;
                 dim=100;
-                bestSol = -41998.29;
+                bestSol = 0;
                 
         case 'F9'
                 fobj = @F9;
@@ -333,7 +333,8 @@ end
 % F8 : Schwefel Function
 
 function o = F8(x)
-o=sum(-x.*sin(sqrt(abs(x))));
+d = length(x);
+o=418.9829*d-sum(x.*sin(sqrt(abs(x))));
 end
 
 % F9 : Rastrigin Function
