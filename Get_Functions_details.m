@@ -216,9 +216,22 @@ switch F
                 ub = 100;
                 dim = 100;
                 bestSol = 0;
+        case 'F28'
+                fobj = @F28;
+                lb = 0;
+                ub = 10;
+                dim = 100;
+                bestSol = -100;
                 
         case 'F29'
-            fobj = @F29;
+                fobj = @F29;
+                lb = -0.5;
+                ub = 0.5;
+                dim = 100;
+                bestSol = 0;
+                
+        case 'F30'
+            fobj = @F30;
             lb = -500;
             ub = 500;
             dim = 100;
@@ -452,7 +465,7 @@ for i=1:10
 end
 end
 
-% F24
+% F24: Power Sum Function
 
 function o = F24(x)
 n = 4;
@@ -462,7 +475,7 @@ inner = sum(x .^ repmat((1:n)', 1, n), 2)';
 o = sum((inner-b).^2);
 end
 
-% F25
+% F25: Zakharov Function
 
 function o = F25(x)
 d = length(x);
@@ -471,13 +484,15 @@ sum2 = sum(0.5.*(1:d).*x);
 o = sum1+sum2^2+sum2^4;
 end
 
-% F26
+% F26: Matyas
 
 function o = F26(x)
 term1 = sum(x.^2);
 term2 = prod(x);
 o = 0.26 .* term1 - 0.48 .* term2;
 end
+
+% F27: Perm Function d, beta
 
 function o = F27(x)
 b = 0.5;
@@ -486,9 +501,30 @@ inner = sum(((1:d).^((1:d)') + b) .* ((x./(1:d)).^((1:d)')-1), 2)';
 o = sum(inner .^2);
 end
 
-% F 29 : Qing Function
-% ref : http://benchmarkfcns.xyz/benchmarkfcns/qingfcn.html
+% F28: Vincent Function
+
+function o = F28(x)
+o = -sum(sin(10.*log2(x)));
+end
+
+% F29: Weierstrass Function
+
 function o = F29(x)
+kmax = 20;
+a = 0.5;
+b = 3;
+d = length(x);
+o = 0;
+for i = 1:d
+        sum1 = sum(a.^(0:kmax) .* cos(2*pi.*b.^(0:kmax).*(x(i)+0.5)));
+        sum2 = d .* sum(a.^(0:kmax) .* cos(pi.*b.^(0:kmax)));
+        o = o + sum1 - sum2;
+end
+end
+
+% F 30 : Qing Function
+% ref : http://benchmarkfcns.xyz/benchmarkfcns/qingfcn.html
+function o = F30(x)
     n = size(x, 2);
     x2 = x .^2;
     
