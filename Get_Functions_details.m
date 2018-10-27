@@ -243,6 +243,20 @@ switch F
             ub = 10.24;
             dim = 100;
             bestSol = 0;
+            
+         case 'F32'
+            fobj = @F32;
+            lb = -1;
+            ub = 1;
+            dim = 100;
+            bestSol = 0;
+            
+        case 'F33'
+            fobj = @F33;
+            lb = -10;
+            ub = 10;
+            dim = 100;
+            bestSol = 0;
                   
         case 'F34'
                 fobj = @F34;
@@ -543,7 +557,7 @@ function o = F30(x)
     o = scores;
 end
 
-% F31: Whitely 
+% F31: Whitely Function
 function o = F31(x)
     fitness = 0;
     n = size(x, 2);
@@ -554,6 +568,29 @@ function o = F31(x)
         end
     end
     o = fitness;
+end
+
+% F32: Csendes Function
+function o = F32(x)
+    cost = 0;
+    n = size(x, 2);
+    for i = 1:n       
+            cost = cost + (x(i).^6*(2+sin(1/x(i))));
+    end
+    o = cost;
+end
+
+% F33: Zero Sum Function
+function o = F33(x) 
+    
+    zeroSum = sum(x);
+    if zeroSum == 0
+        cost = 0;
+    else
+        cost = 1+(10000*abs(zeroSum)).^0.5;
+    end
+    o = cost;
+    
 end
 
 % F34: Salomon Function
