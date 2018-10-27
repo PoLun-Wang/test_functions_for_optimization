@@ -93,6 +93,16 @@ switch func_name
         x=-1:0.01:1; y=x;%[-1,1]
     case 'F33'
         x=-10:0.01:10; y=x;%[-10,10]
+    case 'F34'
+        x = -4:0.05:4; y=x;
+    case 'F35'
+        x = -5:0.05:5; y=x;
+    case 'F36'
+        x = -5:0.05:5; y=x;
+    case 'F37'
+        x = -10:0.1:10; y=x;
+    case 'F38'
+        x = -10:0.1:10; y=x;
 end    
  
 L=length(x);
