@@ -283,8 +283,8 @@ switch F
                 fobj = @F37;
                 lb = -10;
                 ub = 10;
-                dim = 100;
-                bestSol = -186.7309;
+                dim = 2;
+                bestSol = -2.06261218;
                 
         case 'F38'
                 fobj = @F38;
@@ -663,21 +663,14 @@ end
 o = scores;
 end
 
-% F37: Shubert Function
-% ref: http://benchmarkfcns.xyz/benchmarkfcns/shubertfcn.html
+% F37: Cross-in-Tray Function
+% ref: http://benchmarkfcns.xyz/benchmarkfcns/crossintrayfcn.html
 function o = F37(x)
-n = size(x, 2);
-
-scores = 1;
-for i = 1:n
-        inner_sum = 0;
-        for j = 1:5
-                inner_sum = inner_sum + j * cos(((j + 1) * x(:, i)) + j);
-        end
-        scores = inner_sum .* scores;
-end
-
-o = scores;
+    n = size(x, 2);
+    X = x(:, 1);
+    Y = x(:, 2);
+    expcomponent = abs(100 - (sqrt(X .^2 + Y .^2) / pi));
+    o = -0.0001 * ((abs(sin(X) .* sin(Y) .* exp(expcomponent)) + 1) .^ 0.1);
 end
 
 % F38: Levy Function
