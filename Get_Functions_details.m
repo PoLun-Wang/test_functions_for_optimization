@@ -305,7 +305,7 @@ end
 % F2 : Schwefel Function 2.22
 
 function o = F2(x)
-o=sum(abs(x))+prod(abs(x), 2);
+o=sum(abs(x), 2)+prod(abs(x), 2);
 end
 
 % F3 : Schwefel Function 1.2
@@ -328,7 +328,7 @@ end
 
 function o = F5(x)
 dim = size(x, 2);
-o = sum(100*(x(:, 2:dim)-(x(:, 1:dim-1).^2)).^2+(x(:, 1:dim-1)-1).^2);
+o = sum(100*(x(:, 2:dim)-(x(:, 1:dim-1).^2)).^2+(x(:, 1:dim-1)-1).^2, 2);
 end
 
 % F6 :  Step Function
@@ -387,7 +387,7 @@ end
 function o = F13(x)
 dim = size(x,2);
 o = 0.1 .* (sin(3*pi*x(:, 1)).^2 + sum((x(:, 1:dim-1)-1).^2 .* (1+sin(3.*pi.*x(:, 2:dim)).^2), 2)+...
-        ((x(:, dim)-1).^2) .* (1+sin(2*pi*x(:, dim)).^2)) + sum(Ufun(x,5,100,4));
+        ((x(:, dim)-1).^2) .* (1+sin(2*pi*x(:, dim)).^2)) + sum(Ufun(x,5,100,4), 2);
 end
 
 % F14 : Shekel's Foxholes Function
@@ -466,9 +466,14 @@ function o = F21(x)
 aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
 cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
 
-o=0;
-for i=1:5
-        o=o-((x-aSH(i,:)) * (x-aSH(i,:))'+cSH(i))^(-1);
+nData = size(x,1);
+
+o=zeros(nData,1);
+for j = 1:nData
+    tempx = x(j,:);
+    for i=1:5
+            o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
+    end
 end
 end
 
@@ -478,9 +483,15 @@ function o = F22(x)
 aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
 cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
 
-o=0;
-for i=1:7
-        o=o-((x-aSH(i,:))*(x-aSH(i,:))'+cSH(i))^(-1);
+
+nData = size(x,1);
+
+o=zeros(nData,1);
+for j = 1:nData
+    tempx = x(j,:);
+    for i=1:7
+            o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
+    end
 end
 end
 
@@ -490,9 +501,15 @@ function o = F23(x)
 aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
 cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
 
-o=0;
-for i=1:10
-        o=o-((x-aSH(i,:))*(x-aSH(i,:))'+cSH(i))^(-1);
+
+nData = size(x,1);
+
+o=zeros(nData,1);
+for j = 1:nData
+    tempx = x(j,:);
+    for i=1:10
+            o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
+    end
 end
 end
 
@@ -523,8 +540,8 @@ end
 
 function o = F26(x)
 term1 = sum(x.^2, 2);
-term2 = prod(x, 2);
-o = 0.26 .* term1 - 0.48 .* term2;
+term2 = abs(prod(x, 2));
+o = 0.26 .* term1 + 0.48 .* term2;
 end
 
 % F27: Perm Function d, beta
@@ -550,16 +567,18 @@ end
 % F29: Weierstrass Function
 
 function o = F29(x)
-kmax = 20;
-a = 0.5;
-b = 3;
-dim = size(x, 2);
-o = 0;
-for i = 1:dim
-        sum1 = sum(a.^(0:kmax) .* cos(2*pi.*b.^(0:kmax).*(x(:, i)+0.5)));
-        sum2 = dim .* sum(a.^(0:kmax) .* cos(pi.*b.^(0:kmax)));
-        o = o + sum1 - sum2;
+val=0;
+n=size(x,2);
+for i=1:n
+    for k=0:20
+        val=val+0.5^k*cos(2*pi*3^k*(x(i)+0.5));
+    end
 end
+temp=0;
+for k=0:20
+    temp=temp+0.5^k*cos(2*pi*3^k*0.5);
+end
+o=val-n*temp;
 end
 
 % F 30 : Qing Function
@@ -597,7 +616,7 @@ function o = F32(x)
 cost = 0;
 n = size(x, 2);
 for i = 1:n
-        cost = cost + (x(:, i).^6*(2+sin(1/x(:, i))));
+        cost = cost + (x(:, i).^6.*(2+sin(1./x(:, i))));
 end
 o = cost;
 end
@@ -680,7 +699,7 @@ for ii = 1:d
 end
 
 term1 = (sin(pi*w(:, 1))).^2;
-term3 = (w(:, d)-1).^2 * (1+(sin(2*pi*w(:, d))).^2);
+term3 = (w(:, d)-1).^2 .* (1+(sin(2*pi*w(:, d))).^2);
 
 sum = 0;
 for ii = 1:(d-1)
