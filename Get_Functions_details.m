@@ -225,8 +225,8 @@ switch F
                 
         case 'F29'
                 fobj = @F29;
-                lb = -0.5;
-                ub = 0.5;
+                lb = -100;
+                ub = 100;
                 dim = 100;
                 bestSol = 0;
                 
@@ -567,18 +567,9 @@ end
 % F29: Weierstrass Function
 
 function o = F29(x)
-val=0;
-n=size(x,2);
-for i=1:n
-    for k=0:20
-        val=val+0.5^k*cos(2*pi*3^k*(x(i)+0.5));
-    end
-end
-temp=0;
-for k=0:20
-    temp=temp+0.5^k*cos(2*pi*3^k*0.5);
-end
-o=val-n*temp;
+dim = size(x, 2);
+sum_x = x(:, 2:dim).^2 + x(:, 1:dim-1).^2;
+o = sum((sin(sqrt(sum_x)).^2 - 0.5) ./ (0.001*sum_x + 1).^2 + 0.5, 2);
 end
 
 % F 30 : Qing Function
