@@ -24,6 +24,8 @@
 % up is the uppper bound: ub=[ub_1,ub_2,...,ub_d]
 % dim is the number of variables (dimension of the problem)
 
+% Test
+
 function [lb,ub,dim,fobj,bestSol] = Get_Functions_details(F)
 
 switch F
