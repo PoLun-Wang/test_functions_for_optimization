@@ -120,178 +120,179 @@ switch F
         
     case 'F14'
         fobj = @F14;
-        lb=-65.536;
-        ub=65.536;
-        dim=2;
-        bestSol = 1;
+        lb = -100;
+        ub = 100;
+        dim = 100;
+        bestSol = 0;
         
     case 'F15'
         fobj = @F15;
-        lb=-5;
-        ub=5;
-        dim=4;
-        bestSol = 0.0003;
+        lb = -100;
+        ub = 100;
+        dim = 100;
+        bestSol = 0;
         
     case 'F16'
         fobj = @F16;
-        lb=-5;
-        ub=5;
-        dim=2;
-        bestSol = -1.0316;
+        lb = -100;
+        ub = 100;
+        dim = 100;
+        bestSol = 0;
         
     case 'F17'
         fobj = @F17;
-        lb=[-5,0];
-        ub=[10,15];
-        dim=2;
-        bestSol = 0.398;
-        
-    case 'F18'
-        fobj = @F18;
-        lb=-2;
-        ub=2;
-        dim=2;
-        bestSol = 3;
-        
-    case 'F19'
-        fobj = @F19;
-        lb=0;
-        ub=1;
-        dim=3;
-        bestSol = -3.86;
-        
-    case 'F20'
-        fobj = @F20;
-        lb=0;
-        ub=1;
-        dim=6;
-        bestSol = -3.32;
-        
-    case 'F21'
-        fobj = @F21;
-        lb=0;
-        ub=10;
-        dim=4;
-        bestSol = -10.1532;
-        
-    case 'F22'
-        fobj = @F22;
-        lb=0;
-        ub=10;
-        dim=4;
-        bestSol = -10.4028;
-        
-    case 'F23'
-        fobj = @F23;
-        lb=0;
-        ub=10;
-        dim=4;
-        bestSol = -10.5363;
-        
-    case 'F24'
-        fobj = @F24;
-        lb = 0;
-        ub = 10;
-        dim = 4;
-        bestSol = 0;
-        
-    case 'F25'
-        fobj = @F25;
-        lb = -100;
-        ub = 100;
-        dim = 100;
-        bestSol = 0;
-        
-    case 'F26'
-        fobj = @F26;
-        lb = -100;
-        ub = 100;
-        dim = 100;
-        bestSol = 0;
-        
-    case 'F27'
-        fobj = @F27;
-        lb = -100;
-        ub = 100;
-        dim = 100;
-        bestSol = 0;
-        
-    case 'F28'
-        fobj = @F28;
         lb = 0;
         ub = 10;
         dim = 100;
         bestSol = -100;
         
-    case 'F29'
-        fobj = @F29;
+    case 'F18'
+        fobj = @F18;
         lb = -100;
         ub = 100;
         dim = 100;
         bestSol = 0;
         
-    case 'F30'
-        fobj = @F30;
+    case 'F19'
+        fobj = @F19;
         lb = -500;
         ub = 500;
         dim = 100;
         bestSol = 0;
         
-    case 'F31'
-        fobj = @F31;
+    case 'F20'
+        fobj = @F20;
         lb = -10.24;
         ub = 10.24;
         dim = 100;
         bestSol = 0;
         
-    case 'F32'
-        fobj = @F32;
+    case 'F21'
+        fobj = @F21;
         lb = -1;
         ub = 1;
         dim = 100;
         bestSol = 0;
         
-    case 'F33'
-        fobj = @F33;
+    case 'F22'
+        fobj = @F22;
         lb = -10;
         ub = 10;
         dim = 100;
         bestSol = 0;
         
-    case 'F34'
-        fobj = @F34;
+    case 'F23'
+        fobj = @F23;
         lb = -100;
         ub = 100;
         dim = 100;
         bestSol = 0;
         
-    case 'F35'
-        fobj = @F35;
+    case 'F24'
+        fobj = @F24;
         lb = -5;
         ub = 5;
         dim = 100;
         bestSol = -39.16599*dim;
         
-    case 'F36'
-        fobj = @F36;
+    case 'F25'
+        fobj = @F25;
         lb = -5;
         ub = 5;
         dim = 100;
         bestSol = 0;
         
-    case 'F37'
-        fobj = @F37;
+    case 'F26'
+        fobj = @F26;
         lb = -10;
         ub = 10;
-        dim = 2;
-        bestSol = -2.06261218;
+        dim = 100;
+        bestSol = 0;
+        
+    case 'F27'
+        fobj = @F27;
+        lb=-65.536;
+        ub=65.536;
+        dim=2;
+        bestSol = 1;
+        
+    case 'F28'
+        fobj = @F28;
+        lb=-5;
+        ub=5;
+        dim=4;
+        bestSol = 0.0003;
+        
+    case 'F29'
+        fobj = @F29;
+        lb=-5;
+        ub=5;
+        dim=2;
+        bestSol = -1.0316;
+        
+    case 'F30'
+        fobj = @F30;
+        lb=[-5,0];
+        ub=[10,15];
+        dim=2;
+        bestSol = 0.398;
+        
+    case 'F31'
+        fobj = @F31;
+        lb=-2;
+        ub=2;
+        dim=2;
+        bestSol = 3;
+        
+    case 'F32'
+        fobj = @F32;
+        lb=0;
+        ub=1;
+        dim=3;
+        bestSol = -3.86;
+        
+    case 'F33'
+        fobj = @F33;
+        lb=0;
+        ub=1;
+        dim=6;
+        bestSol = -3.32;
+        
+    case 'F34'
+        fobj = @F34;
+        lb=0;
+        ub=10;
+        dim=4;
+        bestSol = -10.1532;
+        
+    case 'F35'
+        fobj = @F35;
+        lb=0;
+        ub=10;
+        dim=4;
+        bestSol = -10.4028;
+        
+    case 'F36'
+        fobj = @F36;
+        lb=0;
+        ub=10;
+        dim=4;
+        bestSol = -10.5363;
+        
+    case 'F37'
+        fobj = @F37;
+        lb = 0;
+        ub = 10;
+        dim = 4;
+        bestSol = 0;
         
     case 'F38'
         fobj = @F38;
         lb = -10;
         ub = 10;
-        dim = 100;
-        bestSol = 0;
+        dim = 2;
+        bestSol = -2.06261218;
+        
 end
 end
 
@@ -389,163 +390,30 @@ o = 0.1 .* (sin(3*pi*x(:, 1)).^2 + sum((x(:, 1:dim-1)-1).^2 .* (1+sin(3.*pi.*x(:
     ((x(:, dim)-1).^2) .* (1+sin(2*pi*x(:, dim)).^2)) + sum(Ufun(x,5,100,4), 2);
 end
 
-% F14 : Shekel's Foxholes Function
+function o=Ufun(x,a,k,m)
+o = k.*((x-a).^m).*(x>a)+k.*((-x-a).^m).*(x<(-a));
+end
+
+% F14: Zakharov Function
 
 function o = F14(x)
-aS=[-32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32;,...
-    -32 -32 -32 -32 -32 -16 -16 -16 -16 -16 0 0 0 0 0 16 16 16 16 16 32 32 32 32 32];
-
-for j=1:25
-    bS(:, j)=j + sum((x-aS(:,j)').^6, 2);
-end
-o=(1/500+sum(1./bS, 2)).^(-1);
-end
-
-% F15 : Kowalik's Function
-
-function o = F15(x)
-aK=[.1957 .1947 .1735 .16 .0844 .0627 .0456 .0342 .0323 .0235 .0246];
-bK=[.25 .5 1 2 4 6 8 10 12 14 16];bK=1./bK;
-o=sum((aK-((x(:, 1).*(bK.^2+x(:, 2).*bK)) ./ (bK.^2+x(:, 3).*bK+x(:, 4)))).^2, 2);
-end
-
-% F16 : Six-Hump Camel-Back Function
-
-function o = F16(x)
-o=4.*(x(:, 1) .^ 2) - 2.1*(x(:, 1) .^ 4)+(x(:, 1) .^ 6) ./ 3 + x(:, 1) .* x(:, 2) - 4.*(x(:, 2) .^ 2) + 4.*(x(:, 2).^4);
-end
-
-% F17 : Branin Function
-
-function o = F17(x)
-o=(x(:, 2) - x(:, 1).^2 .* (5.1/(4*(pi^2))) + 5/pi .* x(:, 1) - 6) .^ 2 + 10*(1-1/(8*pi)) .* cos(x(:, 1))+10;
-end
-
-% F18 : Goldstein-Price Function
-
-function o = F18(x)
-o=(1+(x(:, 1)+x(:, 2)+1).^2 .* (19-14.*x(:, 1)+3.*x(:, 1).^2-14.*x(:, 2)+6.*x(:, 1).*x(:, 2)+3.*x(:, 2).^2)) .* ...
-    (30+(2.*x(:, 1)-3.*x(:, 2)).^2 .* (18-32.*x(:, 1)+12.*(x(:, 1).^2)+48.*x(:, 2)-36.*x(:, 1).*x(:, 2)+27*(x(:, 2).^2)));
-end
-
-% F19 : Hartman's Family
-
-function o = F19(x)
-aH=[3 10 30;
-    .1 10 35;
-    3 10 30;
-    .1 10 35];
-cH=[1 1.2 3 3.2];
-pH=[.3689 .117 .2673;
-    .4699 .4387 .747;
-    .1091 .8732 .5547;
-    .03815 .5743 .8828];
-o=0;
-for i=1:4
-    o=o-cH(i).*exp(-(sum(aH(i,:).*((x-pH(i,:)).^2), 2)));
-end
-end
-
-% F20 : Hartman's Family
-
-function o = F20(x)
-aH=[10 3 17 3.5 1.7 8;.05 10 17 .1 8 14;3 3.5 1.7 10 17 8;17 8 .05 10 .1 14];
-cH=[1 1.2 3 3.2];
-pH=[.1312 .1696 .5569 .0124 .8283 .5886;.2329 .4135 .8307 .3736 .1004 .9991;...
-    .2348 .1415 .3522 .2883 .3047 .6650;.4047 .8828 .8732 .5743 .1091 .0381];
-o=0;
-for i=1:4
-    o=o-cH(i).*exp(-(sum(aH(i,:).*((x-pH(i,:)).^2), 2)));
-end
-end
-
-% F21 : Shekel's Family
-
-function o = F21(x)
-aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
-cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
-
-nData = size(x,1);
-
-o=zeros(nData,1);
-for j = 1:nData
-    tempx = x(j,:);
-    for i=1:5
-        o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
-    end
-end
-end
-
-% F22 : Shekel's Family
-
-function o = F22(x)
-aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
-cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
-
-
-nData = size(x,1);
-
-o=zeros(nData,1);
-for j = 1:nData
-    tempx = x(j,:);
-    for i=1:7
-        o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
-    end
-end
-end
-
-% F23 : Shekel's Family
-
-function o = F23(x)
-aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
-cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
-
-
-nData = size(x,1);
-
-o=zeros(nData,1);
-for j = 1:nData
-    tempx = x(j,:);
-    for i=1:10
-        o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
-    end
-end
-end
-
-% F24: Power Sum Function
-
-function o = F24(x)
-dim = size(x, 2);
-nData = size(x, 1);
-b = [8, 18, 44, 114];
-o = zeros(nData, 1);
-for i = 1:nData
-    temp_x = repmat(x(i, :), dim , 1);
-    inner = sum(temp_x .^ repmat((1:dim)', 1, dim), 2)';
-    o(i) = sum(inner - b).^2;
-end
-end
-
-% F25: Zakharov Function
-
-function o = F25(x)
 dim = size(x, 2);
 sum1 = sum(x.^2, 2);
 sum2 = sum(0.5.*(1:dim).*x, 2);
 o = sum1+sum2.^2+sum2.^4;
 end
 
-% F26: Matyas
+% F15: Matyas
 
-function o = F26(x)
+function o = F15(x)
 term1 = sum(x.^2, 2);
 term2 = abs(prod(x, 2));
 o = 0.26 .* term1 + 0.48 .* term2;
 end
 
-% F27: Perm Function d, beta
+% F16: Perm Function d, beta
 
-function o = F27(x)
+function o = F16(x)
 b = 0.5;
 dim = size(x, 2);
 nData = size(x, 1);
@@ -561,23 +429,23 @@ for i = 1:nData
 end
 end
 
-% F28: Vincent Function
+% F17: Vincent Function
 
-function o = F28(x)
+function o = F17(x)
 o = -sum(sin(10.*log2(x)), 2);
 end
 
-% F29: SineEnvelope Function
+% F18: SineEnvelope Function
 
-function o = F29(x)
+function o = F18(x)
 dim = size(x, 2);
 sum_x = x(:, 2:dim).^2 + x(:, 1:dim-1).^2;
 o = sum((sin(sqrt(sum_x)).^2 - 0.5) ./ (0.001*sum_x + 1).^2 + 0.5, 2);
 end
 
-% F30: Qing Function
+% F19: Qing Function
 
-function o = F30(x)
+function o = F19(x)
 n = size(x, 2);
 x2 = x .^2;
 
@@ -588,9 +456,9 @@ end
 o = scores;
 end
 
-% F31: Whitely Function
+% F20: Whitely Function
 
-function o = F31(x)
+function o = F20(x)
 n = size(x, 2);
 nData = size(x, 1);
 o = zeros(nData, 1);
@@ -606,9 +474,9 @@ for d = 1:nData
 end
 end
 
-% F32: Csendes Function
+% F21: Csendes Function
 
-function o = F32(x)
+function o = F21(x)
 cost = 0;
 n = size(x, 2);
 for i = 1:n
@@ -617,9 +485,9 @@ end
 o = cost;
 end
 
-% F33: Zero Sum Function
+% F22: Zero Sum Function
 
-function o = F33(x)
+function o = F22(x)
 
 zeroSum = sum(x, 2);
 if zeroSum == 0
@@ -631,9 +499,9 @@ o = cost;
 
 end
 
-% F34: Salomon Function
+% F23: Salomon Function
 
-function o = F34(x)
+function o = F23(x)
 x2 = x .^ 2;
 sumx2 = sum(x2, 2);
 sqrtsx2 = sqrt(sumx2);
@@ -643,9 +511,9 @@ scores = 1 - cos(2 .* pi .* sqrtsx2) + (0.1 * sqrtsx2);
 o = scores;
 end
 
-% F35: Styblinski-Tank Function
+% F24: Styblinski-Tank Function
 
-function o = F35(x)
+function o = F24(x)
 n = size(x, 2);
 scores = 0;
 for i = 1:n
@@ -656,9 +524,9 @@ scores = 0.5 * scores;
 o = scores;
 end
 
-% F36: Xin-She Yang Function
+% F25: Xin-She Yang Function
 
-function o = F36(x)
+function o = F25(x)
 n = size(x, 2);
 
 scores = 0;
@@ -669,19 +537,9 @@ end
 o = scores;
 end
 
-% F37: Cross-in-Tray Function
+% F26: Levy Function
 
-function o = F37(x)
-n = size(x, 2);
-X = x(:, 1);
-Y = x(:, 2);
-expcomponent = abs(100 - (sqrt(X .^2 + Y .^2) / pi));
-o = -0.0001 * ((abs(sin(X) .* sin(Y) .* exp(expcomponent)) + 1) .^ 0.1);
-end
-
-% F38: Levy Function
-
-function o = F38(x)
+function o = F26(x)
 d = size(x, 2);
 
 for ii = 1:d
@@ -701,6 +559,150 @@ end
 o = term1 + sum + term3;
 end
 
-function o=Ufun(x,a,k,m)
-o = k.*((x-a).^m).*(x>a)+k.*((-x-a).^m).*(x<(-a));
+% F27 : Shekel's Foxholes Function
+
+function o = F27(x)
+aS=[-32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32;,...
+    -32 -32 -32 -32 -32 -16 -16 -16 -16 -16 0 0 0 0 0 16 16 16 16 16 32 32 32 32 32];
+
+for j=1:25
+    bS(:, j)=j + sum((x-aS(:,j)').^6, 2);
 end
+o=(1/500+sum(1./bS, 2)).^(-1);
+end
+
+% F28 : Kowalik's Function
+
+function o = F28(x)
+aK=[.1957 .1947 .1735 .16 .0844 .0627 .0456 .0342 .0323 .0235 .0246];
+bK=[.25 .5 1 2 4 6 8 10 12 14 16];bK=1./bK;
+o=sum((aK-((x(:, 1).*(bK.^2+x(:, 2).*bK)) ./ (bK.^2+x(:, 3).*bK+x(:, 4)))).^2, 2);
+end
+
+% F29 : Six-Hump Camel-Back Function
+
+function o = F29(x)
+o=4.*(x(:, 1) .^ 2) - 2.1*(x(:, 1) .^ 4)+(x(:, 1) .^ 6) ./ 3 + x(:, 1) .* x(:, 2) - 4.*(x(:, 2) .^ 2) + 4.*(x(:, 2).^4);
+end
+
+% F30 : Branin Function
+
+function o = F30(x)
+o=(x(:, 2) - x(:, 1).^2 .* (5.1/(4*(pi^2))) + 5/pi .* x(:, 1) - 6) .^ 2 + 10*(1-1/(8*pi)) .* cos(x(:, 1))+10;
+end
+
+% F31 : Goldstein-Price Function
+
+function o = F31(x)
+o=(1+(x(:, 1)+x(:, 2)+1).^2 .* (19-14.*x(:, 1)+3.*x(:, 1).^2-14.*x(:, 2)+6.*x(:, 1).*x(:, 2)+3.*x(:, 2).^2)) .* ...
+    (30+(2.*x(:, 1)-3.*x(:, 2)).^2 .* (18-32.*x(:, 1)+12.*(x(:, 1).^2)+48.*x(:, 2)-36.*x(:, 1).*x(:, 2)+27*(x(:, 2).^2)));
+end
+
+% F32 : Hartman's Family
+
+function o = F32(x)
+aH=[3 10 30;
+    .1 10 35;
+    3 10 30;
+    .1 10 35];
+cH=[1 1.2 3 3.2];
+pH=[.3689 .117 .2673;
+    .4699 .4387 .747;
+    .1091 .8732 .5547;
+    .03815 .5743 .8828];
+o=0;
+for i=1:4
+    o=o-cH(i).*exp(-(sum(aH(i,:).*((x-pH(i,:)).^2), 2)));
+end
+end
+
+% F33 : Hartman's Family
+
+function o = F33(x)
+aH=[10 3 17 3.5 1.7 8;.05 10 17 .1 8 14;3 3.5 1.7 10 17 8;17 8 .05 10 .1 14];
+cH=[1 1.2 3 3.2];
+pH=[.1312 .1696 .5569 .0124 .8283 .5886;.2329 .4135 .8307 .3736 .1004 .9991;...
+    .2348 .1415 .3522 .2883 .3047 .6650;.4047 .8828 .8732 .5743 .1091 .0381];
+o=0;
+for i=1:4
+    o=o-cH(i).*exp(-(sum(aH(i,:).*((x-pH(i,:)).^2), 2)));
+end
+end
+
+% F34 : Shekel's Family
+
+function o = F34(x)
+aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
+cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
+
+nData = size(x,1);
+
+o=zeros(nData,1);
+for j = 1:nData
+    tempx = x(j,:);
+    for i=1:5
+        o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
+    end
+end
+end
+
+% F35 : Shekel's Family
+
+function o = F35(x)
+aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
+cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
+
+
+nData = size(x,1);
+
+o=zeros(nData,1);
+for j = 1:nData
+    tempx = x(j,:);
+    for i=1:7
+        o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
+    end
+end
+end
+
+% F36 : Shekel's Family
+
+function o = F36(x)
+aSH=[4 4 4 4;1 1 1 1;8 8 8 8;6 6 6 6;3 7 3 7;2 9 2 9;5 5 3 3;8 1 8 1;6 2 6 2;7 3.6 7 3.6];
+cSH=[.1 .2 .2 .4 .4 .6 .3 .7 .5 .5];
+
+
+nData = size(x,1);
+
+o=zeros(nData,1);
+for j = 1:nData
+    tempx = x(j,:);
+    for i=1:10
+        o(j)=o(j)-((tempx-aSH(i,:)) * (tempx-aSH(i,:))'+cSH(i))^(-1);
+    end
+end
+end
+
+% F37: Power Sum Function
+
+function o = F37(x)
+dim = size(x, 2);
+nData = size(x, 1);
+b = [8, 18, 44, 114];
+o = zeros(nData, 1);
+for i = 1:nData
+    temp_x = repmat(x(i, :), dim , 1);
+    inner = sum(temp_x .^ repmat((1:dim)', 1, dim), 2)';
+    o(i) = sum(inner - b).^2;
+end
+end
+
+% F38: Cross-in-Tray Function
+
+function o = F38(x)
+n = size(x, 2);
+X = x(:, 1);
+Y = x(:, 2);
+expcomponent = abs(100 - (sqrt(X .^2 + Y .^2) / pi));
+o = -0.0001 * ((abs(sin(X) .* sin(Y) .* exp(expcomponent)) + 1) .^ 0.1);
+end
+
