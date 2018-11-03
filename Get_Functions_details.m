@@ -162,8 +162,8 @@ switch F
         
     case 'F20'
         fobj = @F20;
-        lb = -10.24;
-        ub = 10.24;
+        lb = -500;
+        ub = 500;
         dim = 100;
         bestSol = 0;
         
@@ -456,22 +456,14 @@ end
 o = scores;
 end
 
-% F20: Whitely Function
+% F20: Trigonometric02 Function
 
 function o = F20(x)
-n = size(x, 2);
-nData = size(x, 1);
-o = zeros(nData, 1);
-for d = 1:nData
-    fitness = 0;
-    for i = 1:n
-        for j = 1:n
-            temp = 100*((x(d,i).^2) - x(d,j)).^2 + (1 - x(d,j)).^2;
-            fitness = fitness + (temp.^2)/4000 - cos(temp) + 1;
-        end
-    end
-    o(d) = fitness;
-end
+
+temp_x = (x - 0.9).^2;
+
+o = 1 + sum( 8*sin(7*temp_x).^2 + 6*sin(14*temp_x).^2 + temp_x,2);
+
 end
 
 % F21: Csendes Function
