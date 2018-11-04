@@ -134,10 +134,10 @@ switch F
         
     case 'F16'
         fobj = @F16;
-        lb = -100;
-        ub = 100;
+        lb = 0;
+        ub = 1;
         dim = 100;
-        bestSol = 0;
+        bestSol = 1;
         
     case 'F17'
         fobj = @F17;
@@ -411,22 +411,22 @@ term2 = abs(prod(x, 2));
 o = 0.26 .* term1 + 0.48 .* term2;
 end
 
-% F16: Perm Function d, beta
+% F16: Type-I Simple Deceptive Function
 
 function o = F16(x)
-b = 0.5;
-dim = size(x, 2);
-nData = size(x, 1);
-o = zeros(nData, 1);
 
-square_dim = (1:dim).^((1:dim)');
-temp_x = x ./ (1:dim);
+dim = size(x,2);
 
-for i = 1:nData
-    tx = temp_x(i, :);
-    inner = sum((square_dim + b) .* (tx .^((1:dim)')-1), 2)';
-    o(i) = sum(inner .^2);
-end
+alpha = 0.8;
+beta = 1;
+
+mask = (x <= alpha);
+
+temp1 = mask.*(alpha - x);
+temp2 = (~mask).*((x - alpha)/(1-alpha));
+
+o = 1/dim*(sum((temp1+temp2), 2)).^beta;
+
 end
 
 % F17: Vincent Function

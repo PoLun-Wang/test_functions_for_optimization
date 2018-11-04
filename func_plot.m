@@ -70,7 +70,7 @@ switch func_name
         x = -10:0.1:10; y = x;
         
     case 'F16'
-        x = -2:0.01:2; y = x;
+        x = 0:0.01:1; y = x;
         
     case 'F17'
         x = 0:0.1:10; y = x;
@@ -79,7 +79,7 @@ switch func_name
         x = -20:0.1:20; y = x;
         
     case 'F19'
-        x=-500:2:500; y=x;
+        x=-2:0.01:2; y=x;
         
     case 'F20'
         x=0:0.01:2; y=x;
