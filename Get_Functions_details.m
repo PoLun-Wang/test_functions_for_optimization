@@ -311,11 +311,7 @@ end
 % F3 : Schwefel Function 1.2
 
 function o = F3(x)
-dim = size(x,2);
-o = 0;
-for i=1:dim
-    o = o + sum(x(:, 1:i), 2).^2;
-end
+o = sum(cumsum(x, 2).^2, 2);
 end
 
 % F4 : Schwefel Function 2.21
@@ -448,33 +444,20 @@ end
 function o = F19(x)
 n = size(x, 2);
 x2 = x .^2;
-
-scores = 0;
-for i = 1:n
-    scores = scores + (x2(:, i) - i) .^ 2;
-end
-o = scores;
+o = sum((x2 - (1:n)).^2, 2);
 end
 
 % F20: Trigonometric02 Function
 
 function o = F20(x)
-
 temp_x = (x - 0.9).^2;
-
 o = 1 + sum( 8*sin(7*temp_x).^2 + 6*sin(14*temp_x).^2 + temp_x,2);
-
 end
 
 % F21: Csendes Function
 
 function o = F21(x)
-cost = 0;
-n = size(x, 2);
-for i = 1:n
-    cost = cost + (x(:, i).^6.*(2+sin(1./x(:, i))));
-end
-o = cost;
+o = sum(x.^6 .* (2 + sin(1./x)), 2);
 end
 
 % F22: Zero Sum Function
@@ -506,49 +489,28 @@ end
 % F24: Styblinski-Tank Function
 
 function o = F24(x)
-n = size(x, 2);
-scores = 0;
-for i = 1:n
-    scores = scores + ((x(:, i) .^4) - (16 * x(:, i) .^ 2) + (5 * x(:, i)));
-end
-scores = 0.5 * scores;
-
-o = scores;
+o = 0.5 .* sum((x.^4 - (16.*x.^2) + (5.*x)), 2);
 end
 
 % F25: Xin-She Yang Function
 
 function o = F25(x)
 n = size(x, 2);
-
-scores = 0;
-for i = 1:n
-    scores = scores + rand * (abs(x(:, i)) .^ i);
-end
-
-o = scores;
+o = sum(rand(1, n) .* abs(x).^(1:n), 2);
 end
 
 % F26: Levy Function
 
 function o = F26(x)
 d = size(x, 2);
-
-for ii = 1:d
-    w(:, ii) = 1 + (x(:, ii) - 1)./4;
-end
-
+w = 1+(x-1)./4;
 term1 = (sin(pi*w(:, 1))).^2;
 term3 = (w(:, d)-1).^2 .* (1+(sin(2*pi*w(:, d))).^2);
 
-sum = 0;
-for ii = 1:(d-1)
-    wi = w(:, ii);
-    new = (wi-1).^2 .* (1+10*(sin(pi*wi+1)).^2);
-    sum = sum + new;
-end
+w = w(:, 1:end-1);
+summary = sum( (w-1).^2 .* (1+10.*(sin(pi .* w + 1)).^2), 2);
 
-o = term1 + sum + term3;
+o = term1 + summary + term3;
 end
 
 % F27 : Shekel's Foxholes Function
