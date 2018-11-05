@@ -21,138 +21,104 @@
 
 function func_plot(func_name)
 
-[~,~,~,fobj]=Get_Functions_details(func_name);
+[lb,ub,dim,fobj]=Get_Functions_details(func_name);
 
-switch func_name
-    case 'F1'
-        x=-100:2:100; y=x;
+switch func_name 
+    case 'F1' 
+        x=-100:2:100; y=x; %[-100,100]
         
-    case 'F2'
-        x=-100:2:100; y=x;
+    case 'F2' 
+        x=-100:2:100; y=x; %[-10,10]
         
-    case 'F3'
-        x=-100:2:100; y=x;
+    case 'F3' 
+        x=-100:2:100; y=x; %[-100,100]
         
-    case 'F4'
-        x=-100:2:100; y=x;
-        
-    case 'F5'
-        x=-200:2:200; y=x;
-        
-    case 'F6'
-        x=-10:0.1:10; y=x;
-        
-    case 'F7'
-        x=-1:0.03:1;  y=x;
-        
-    case 'F8'
-        x=-500:10:500;y=x;
-        
-    case 'F9'
-        x=-5:0.1:5;   y=x;
-        
-    case 'F10'
-        x=-20:0.5:20; y=x;
-        
-    case 'F11'
-        x=-500:10:500; y=x;
-        
-    case 'F12'
-        x=-10:0.1:10; y=x;
-        
-    case 'F13'
-        x=-5:0.08:5; y=x;
-        
-    case 'F14'
-        x = -10:0.1:10; y = x;
-        
-    case 'F15'
-        x = -10:0.1:10; y = x;
-        
-    case 'F16'
-        x = 0:0.01:1; y = x;
-        
-    case 'F17'
-        x = 0:0.1:10; y = x;
-        
-    case 'F18'
-        x = -20:0.1:20; y = x;
-        
-    case 'F19'
-        x=-2:0.01:2; y=x;
-        
-    case 'F20'
-        x=0:0.01:2; y=x;
-        
-    case 'F21'
-        x=-1:0.01:1; y=x;
-        
-    case 'F22'
-        x=-10:0.1:10; y=x;
-        
-    case 'F23'
-        x = -4:0.05:4; y=x;
-        
+    case 'F4' 
+        x=-100:2:100; y=x; %[-100,100]
+    case 'F5' 
+        x=-200:2:200; y=x; %[-5,5]
+    case 'F6' 
+        x=-10:0.1:10; y=x; %[-100,100]
+    case 'F7' 
+        x=-1:0.03:1;  y=x;  %[-1,1]
+    case 'F8' 
+        x=-500:10:500;y=x; %[-500,500]
+    case 'F9' 
+        x=-5:0.1:5;   y=x; %[-5,5]    
+    case 'F10' 
+        x=-20:0.5:20; y=x;%[-500,500]
+    case 'F11' 
+        x=-500:10:500; y=x;%[-0.5,0.5]
+    case 'F12' 
+        x=-10:0.1:10; y=x;%[-pi,pi]
+    case 'F13' 
+        x=-5:0.08:5; y=x;%[-3,1]
+    case 'F14' 
+        x=-100:2:100; y=x;%[-100,100]
+    case 'F15' 
+        x=-5:0.1:5; y=x;%[-5,5]
+    case 'F16' 
+        x=-1:0.01:1; y=x;%[-5,5]
+    case 'F17' 
+        x=-5:0.1:5; y=x;%[-5,5]
+    case 'F18' 
+        x=-2:0.06:2; y=x;%[-5,5]
+    case 'F19' 
+        x=-5:0.1:5; y=x;%[-5,5]
+    case 'F20' 
+        x=-5:0.1:5; y=x;%[-5,5]        
+    case 'F21' 
+        x=-5:0.1:5; y=x;%[-5,5]
+    case 'F22' 
+        x=-5:0.1:5; y=x;%[-5,5]     
+    case 'F23' 
+        x=-5:0.1:5; y=x;%[-5,5]  
     case 'F24'
-        x = -5:0.05:5; y=x;
-        
+        x = 0:0.05:4; y = x;%[0, 4]
     case 'F25'
-        x = -5:0.05:5; y=x;
-        
+        x = -10:0.1:10; y = x;%[-10, 10]
     case 'F26'
-        x = -10:0.1:10; y=x;
-        
+        x = -10:0.1:10; y = x;%[-10, 10]
     case 'F27'
-        x=-100:2:100; y=x;
-        
+        x = -2:0.01:2; y = x;%[-2, 2]
     case 'F28'
-        x=-5:0.1:5; y=x;
-        
+        x = 0:0.1:10; y = x;%[-1, 1]
     case 'F29'
-        x=-1:0.01:1; y=x;
-        
+        x = -20:0.1:20; y = x;%[-20, 20]
     case 'F30'
-        x=-5:0.1:5; y=x;
-        
+        x=-500:2:500; y=x; %[-500,500]
     case 'F31'
-        x=-2:0.06:2; y=x;
-        
+        x=-10.24:0.1:10.24; y=x;%[-10.24,10.24]
     case 'F32'
-        x=-5:0.1:5; y=x;
-        
+        x=-1:0.01:1; y=x;%[-1,1]
     case 'F33'
-        x=-5:0.1:5; y=x;
-        
+        x=-10:0.1:10; y=x;%[-10,10]
     case 'F34'
-        x=-5:0.1:5; y=x;
-        
+        x = -4:0.05:4; y=x;
     case 'F35'
-        x=-5:0.1:5; y=x;
-        
+        x = -5:0.05:5; y=x;
     case 'F36'
-        x=-5:0.1:5; y=x;
-        
+        x = -5:0.05:5; y=x;
     case 'F37'
-        x = 0:0.05:4; y = x;
-        
+        x = -10:0.1:10; y=x;
     case 'F38'
         x = -10:0.1:10; y=x;
-        
-end
-
+end    
+ 
 L=length(x);
 f=[];
+
 for i=1:L
     for j=1:L
-        if strcmp(func_name,'F28')==1 || strcmp(func_name,'F34')==1 || strcmp(func_name,'F35')==1 || strcmp(func_name,'F36')==1 || strcmp(func_name,'F37')==1
+        if strcmp(func_name,'F15')==1 || strcmp(func_name,'F21')==1 || strcmp(func_name,'F22')==1 || strcmp(func_name,'F23')==1 || strcmp(func_name,'F24')==1
             f(i,j)=fobj([x(i),y(j),0,0]);
-        elseif strcmp(func_name,'F32')==1
+        elseif strcmp(func_name,'F19')==1
             f(i,j)=fobj([x(i),y(j),0]);
-        elseif strcmp(func_name,'F33')==1
+        elseif strcmp(func_name,'F20')==1
             f(i,j)=fobj([x(i),y(j),0,0,0,0]);
         else
             f(i,j)=fobj([x(i),y(j)]);
-        end
+        end          
     end
 end
 
